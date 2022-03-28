@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/mainList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/resultView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rollButton" />
+
+                <Button
+                    android:id="@+id/rollButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/roll"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mainList"
+                    android:onClick="makeRoll"
+                    tools:layout_editor_absoluteX="212dp" />
+                <LinearLayout
+                    android:id="@+id/d2Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d2" />
+
+                    <Button
+                        android:id="@+id/decreaseD2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d2Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="2"/>
+
+                    <Button
+                        android:id="@+id/increaseD2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d3Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d3" />
+
+                    <Button
+                        android:id="@+id/decreaseD3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d3Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="3"/>
+
+                    <Button
+                        android:id="@+id/increaseD3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d4Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d4" />
+
+                    <Button
+                        android:id="@+id/decreaseD4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d4Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="4"/>
+
+                    <Button
+                        android:id="@+id/increaseD4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d5Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d5" />
+
+                    <Button
+                        android:id="@+id/decreaseD5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d5Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="5"/>
+
+                    <Button
+                        android:id="@+id/increaseD5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d6Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d6" />
+
+                    <Button
+                        android:id="@+id/decreaseD6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d6Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="6"/>
+
+                    <Button
+                        android:id="@+id/increaseD6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d7Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d7" />
+
+                    <Button
+                        android:id="@+id/decreaseD7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d7Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="7"/>
+
+                    <Button
+                        android:id="@+id/increaseD7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d8Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d8" />
+
+                    <Button
+                        android:id="@+id/decreaseD8"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d8Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="8"/>
+
+                    <Button
+                        android:id="@+id/increaseD8"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d10Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d10" />
+
+                    <Button
+                        android:id="@+id/decreaseD10"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d10Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="10"/>
+
+                    <Button
+                        android:id="@+id/increaseD10"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d12Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d12" />
+
+                    <Button
+                        android:id="@+id/decreaseD12"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d12Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="12"/>
+
+                    <Button
+                        android:id="@+id/increaseD12"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d14Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d14" />
+
+                    <Button
+                        android:id="@+id/decreaseD14"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d14Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="14"/>
+
+                    <Button
+                        android:id="@+id/increaseD14"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d16Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d16" />
+
+                    <Button
+                        android:id="@+id/decreaseD16"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d16Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="16"/>
+
+                    <Button
+                        android:id="@+id/increaseD16"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d20Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d20" />
+
+                    <Button
+                        android:id="@+id/decreaseD20"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d20Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="20"/>
+
+                    <Button
+                        android:id="@+id/increaseD20"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d24Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d24" />
+
+                    <Button
+                        android:id="@+id/decreaseD24"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d24Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="24"/>
+
+                    <Button
+                        android:id="@+id/increaseD24"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d30Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d30" />
+
+                    <Button
+                        android:id="@+id/decreaseD30"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d30Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="30"/>
+
+                    <Button
+                        android:id="@+id/increaseD30"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d100Dice"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/d100"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="d100" />
+
+                    <Button
+                        android:id="@+id/decreaseD100"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="decreaseDices"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/d100Amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"
+                        android:transitionName="100"/>
+
+                    <Button
+                        android:id="@+id/increaseD100"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="addDices"
+                        android:text="Increase" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/modifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/decreaseNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="decreaseModification"
+                        android:text="Decrease" />
+
+                    <EditText
+                        android:id="@+id/modificationNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberSigned"
+                        android:text="0"/>
+
+                    <Button
+                        android:id="@+id/increaseNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="addModification"
+                        android:text="Increase" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

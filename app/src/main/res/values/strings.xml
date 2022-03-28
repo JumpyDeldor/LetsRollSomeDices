@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LetsRollSomeDices</string>
+    <string name="button">Button</string>
+    <string name="add">Add</string>
+    <string name="decrease">Decrease</string>
+    <string name="roll">Roll</string>
+</resources>
