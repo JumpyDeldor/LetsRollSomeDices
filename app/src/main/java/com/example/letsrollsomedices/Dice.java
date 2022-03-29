@@ -85,7 +85,7 @@ public class Dice {
         }
         throwing+="result:"+result+ '\n'+ '\n';
     }
-    //Вывод результата
+    //Выводим результат
     public String showResult(){
         return throwing;
     }
