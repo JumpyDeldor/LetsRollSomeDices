@@ -44,7 +44,7 @@ public class Dice {
         }
         addModificationsToResult();//Вызываем следующий метод
     }
-    //Метод, который формирует строку результата и добавляет в него все модификторы
+    //Метод, который формирует строку результата и добавляет в него все модификторы ы
     private void addModificationsToResult(){
         for (String modification : modifications) result += Integer.parseInt(modification);
 
